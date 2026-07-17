@@ -286,6 +286,7 @@ void modify(void)
                          if(check->rollno==rn)
                          {
                           roll_modify(rn);
+                          printf("%d modifed \n",rn);
                           break;
                          }
 
@@ -293,7 +294,7 @@ void modify(void)
                              check=check->next;
                          
                      }
-                     printf("%d modifed \n",rn);
+                   
                  }
                  break;
         case 'N':
