@@ -399,19 +399,19 @@ void roll_modify(int rollno)
       if(check->rollno==rollno)
       {
           printf("What you want to modify\n");
-          
-              printf("1)roll no\n2)name\n3)percentage\n4)everything\n");
+              
+              printf("1)rollno\n2)name\n3)percentage\n4)everything\n");
               scanf("%d",&choice);
             if(choice==1)
             {
-m:
-                printf("Enter the roll no\n");
+               m:
+               printf("Enter the rollo\n");
+               scanf("%d",&check->rollno);
                 while(check)
                 {
                    if(check->rollno==rollno)
                    {
                    printf("roll no should not be same\n");
-                   check=head;
                    goto m;
                    }
                    else
@@ -420,7 +420,7 @@ m:
                    }
 
                 }
-                scanf("%d",&check->rollno);
+               
                 break;
             }
             else if(choice==2)
