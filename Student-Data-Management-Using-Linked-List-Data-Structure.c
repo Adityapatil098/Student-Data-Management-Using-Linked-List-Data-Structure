@@ -220,9 +220,14 @@ void show(void)
 
     }
     while(ptr)
-    {
+    { if(ptr->name[0]==' ')
+       {
+            printf("%d",ptr->rollno);
+       }
+       else
         printf("%d %s %f\n",ptr->rollno,ptr->name,ptr->percentage);
-        ptr=ptr->next;
+        
+ptr=ptr->next;
     }
 }
 void del_roll(int num)
