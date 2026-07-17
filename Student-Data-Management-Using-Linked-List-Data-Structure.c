@@ -191,10 +191,10 @@ void delete(void)
              }
               else
               {
-                  printf("enter roll no to delete according to\n");
+                 printf("enter roll no to delete\n");
                   scanf("%d",&rn);
                   del_roll(rn);
-                  printf("deta deleted\n");
+                  printf("data deleted\n");
               }
               break;
           }
@@ -273,21 +273,21 @@ void modify(void)
                          printf("no data found\n");
                          break;
                      }
-m:
+
                      printf("enter the roll no\n");
                      scanf("%d",&rn);
                      while(check)
                      {
                          if(check->rollno==rn)
                          {
-                         printf("no duplicate accepted\n");
-                         goto m;
+                          roll_modify(rn);
+                          break;
                          }
+
                          else
                              check=check->next;
                          
                      }
-                     roll_modify(rn);
                      printf("%d modifed \n",rn);
                  }
                  break;
@@ -327,7 +327,7 @@ m:
                      }
                      else
                      {
-                         printf("according to which roll no you eant to modify\n");
+                         printf("according to which roll no you want to modify\n");
                          scanf("%d",&rn);
                          roll_modify(rn);
                          printf("modified\n");
@@ -373,7 +373,7 @@ m:
                     else
                     {
                         printf("Enter roll no\n");
-                        scanf("%d\n",&rn);
+                        scanf("%d",&rn);
                         roll_modify(rn);
                         printf("modified");
                     }
@@ -395,7 +395,7 @@ void roll_modify(int rollno)
       {
           printf("What you want to modify\n");
           
-              printf("1)roll no\n 2)name\n3) percentage\n4)everything\n");
+              printf("1)roll no\n2)name\n3)percentage\n4)everything\n");
               scanf("%d",&choice);
             if(choice==1)
             {
@@ -420,18 +420,20 @@ m:
             }
             else if(choice==2)
            {
+               printf("Enter new name\n");
                scanf("%s",check->name);
                break;
            }
             else if(choice==3)
             {
+                printf("Enter percentage\n");
                 scanf("%f",&check->percentage);
                 break;
             }
             else
             {
-               
-                scanf("%d %s %f",&check->rollno,check->name,&check->percentage);
+                printf("Enter name percentages\n");
+                scanf("%s %f",check->name,&check->percentage);
                 break;
                 }
             }
@@ -550,7 +552,6 @@ void del_all(void)
   free(prev);
   prev=last;
   }
-  show();
   printf("all deleted\n");
 }
 
