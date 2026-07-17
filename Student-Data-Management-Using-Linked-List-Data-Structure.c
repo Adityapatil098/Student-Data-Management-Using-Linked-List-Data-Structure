@@ -370,6 +370,7 @@ void modify(void)
                             if(check->percentage==m)
                             {
                                roll_modify(check->rollno);
+                               break;
                             }
                             else
                                 check=check->next;
@@ -394,6 +395,7 @@ void roll_modify(int rollno)
 {
   int choice,n;
   student*check=head;
+  student*check1=head;
   while(check)
   {
       if(check->rollno==rollno)
@@ -405,23 +407,26 @@ void roll_modify(int rollno)
             if(choice==1)
             {
                m:
+                check1=head;
                printf("Enter the rollo\n");
-               scanf("%d",&check->rollno);
-                while(check)
+               scanf("%d",&n);
+                while(check1)
                 {
-                   if(check->rollno==rollno)
+                   if(check1->rollno==n)
                    {
                    printf("roll no should not be same\n");
+                 
                    goto m;
                    }
                    else
                    {
-                       check=check->next;
+                       check1=check1->next;
                    }
-
+                  
                 }
-               
-                break;
+               check->rollno=n;
+               break;
+                
             }
             else if(choice==2)
            {
@@ -442,7 +447,6 @@ void roll_modify(int rollno)
                 break;
                 }
             }
-       
        
       else
       {
