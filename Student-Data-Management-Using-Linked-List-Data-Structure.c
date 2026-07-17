@@ -222,7 +222,7 @@ void show(void)
     while(ptr)
     { if(ptr->name[0]==' ')
        {
-            printf("%d",ptr->rollno);
+            printf("%d\n",ptr->rollno);
        }
        else
         printf("%d %s %f\n",ptr->rollno,ptr->name,ptr->percentage);
